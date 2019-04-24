@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1286</width>
+    <height>625</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1286</width>
+    <height>625</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -19,7 +25,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>1286</width>
      <height>22</height>
     </rect>
    </property>
@@ -43,6 +49,8 @@
      <bool>false</bool>
     </property>
     <addaction name="actionNew_file"/>
+    <addaction name="actionopen_file"/>
+    <addaction name="actionsave"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuwindows">
@@ -79,10 +87,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>New File</string>
+    <string>新建文件</string>
    </property>
    <property name="iconText">
-    <string>New File</string>
+    <string>新建文件</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -90,7 +98,23 @@
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit </string>
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionopen_file">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>
