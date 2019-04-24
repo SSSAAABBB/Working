@@ -26,6 +26,8 @@ class Ui_MainWindow
 public:
     QAction *actionNew_file;
     QAction *actionExit;
+    QAction *actionopen_file;
+    QAction *actionsave;
     QWidget *centralWidget;
     QMenuBar *menuBar;
     QMenu *menuFile;
@@ -39,18 +41,23 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(1286, 625);
+        MainWindow->setMinimumSize(QSize(1286, 625));
         actionNew_file = new QAction(MainWindow);
         actionNew_file->setObjectName(QString::fromUtf8("actionNew_file"));
         actionNew_file->setCheckable(false);
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
+        actionopen_file = new QAction(MainWindow);
+        actionopen_file->setObjectName(QString::fromUtf8("actionopen_file"));
+        actionsave = new QAction(MainWindow);
+        actionsave->setObjectName(QString::fromUtf8("actionsave"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 22));
+        menuBar->setGeometry(QRect(0, 0, 1286, 22));
         menuBar->setToolTipDuration(2000);
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
@@ -75,6 +82,8 @@ public:
         menuBar->addAction(menuPlugins->menuAction());
         menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew_file);
+        menuFile->addAction(actionopen_file);
+        menuFile->addAction(actionsave);
         menuFile->addAction(actionExit);
 
         retranslateUi(MainWindow);
@@ -85,12 +94,20 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        actionNew_file->setText(QApplication::translate("MainWindow", "New File", nullptr));
-        actionNew_file->setIconText(QApplication::translate("MainWindow", "New File", nullptr));
+        actionNew_file->setText(QApplication::translate("MainWindow", "\346\226\260\345\273\272\346\226\207\344\273\266", nullptr));
+        actionNew_file->setIconText(QApplication::translate("MainWindow", "\346\226\260\345\273\272\346\226\207\344\273\266", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionNew_file->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionExit->setText(QApplication::translate("MainWindow", "Exit ", nullptr));
+        actionExit->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionExit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Q", nullptr));
+#endif // QT_NO_SHORTCUT
+        actionopen_file->setText(QApplication::translate("MainWindow", "\346\211\223\345\274\200\346\226\207\344\273\266", nullptr));
+        actionsave->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionsave->setShortcut(QApplication::translate("MainWindow", "Ctrl+S", nullptr));
+#endif // QT_NO_SHORTCUT
 #ifndef QT_NO_TOOLTIP
         menuBar->setToolTip(QApplication::translate("MainWindow", "File", nullptr));
 #endif // QT_NO_TOOLTIP
