@@ -19,6 +19,8 @@ private slots:
     void on_actionNew_file_triggered();
 
 
+    void on_actionsave_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
